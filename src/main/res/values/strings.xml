@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fit Health</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="imate_back">Back</string>
+    <string name="edit_text_search">SEARCH</string>
+    <string name="voice_cancel">Voice Cancel</string>
+
+    <!--Database Name-->
+    <string name="database_name">database_log</string>
+    <string name="string_filler">Filler</string>
+</resources>
