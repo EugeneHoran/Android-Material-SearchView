@@ -108,9 +108,6 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.menu_main);
         tabs.setTabTextColors(Color.parseColor("#906D6D6D"), Color.parseColor("#6D6D6D"));
         tabs.setTabMode(TabLayout.MODE_SCROLLABLE);
-        tabs.addTab(tabs.newTab().setText("Tab 1"));
-        tabs.addTab(tabs.newTab().setText("Tab 2"));
-        tabs.addTab(tabs.newTab().setText("Tab 3"));
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         MyPagerAdapter pagerAdapterToolbarSearch = new MyPagerAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapterToolbarSearch);
