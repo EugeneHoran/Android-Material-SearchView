@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/relHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:minHeight="@dimen/search_height">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="@dimen/search_height"
+            android:layout_height="@dimen/search_height"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/image_background"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:padding="@dimen/image_padding"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/search_height"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toEndOf="@+id/imgBack"
+            android:layout_toLeftOf="@+id/imgClear"
+            android:layout_toRightOf="@+id/imgBack"
+            android:layout_toStartOf="@+id/imgClear"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            android:imeOptions="actionSearch"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:textSize="@dimen/search_text_size" />
+
+        <ImageView
+            android:id="@+id/imgClear"
+            android:layout_width="@dimen/search_height"
+            android:layout_height="@dimen/search_height"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/image_background"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:padding="@dimen/image_padding"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_close" />
+
+        <LinearLayout
+            android:id="@+id/linearItemsHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

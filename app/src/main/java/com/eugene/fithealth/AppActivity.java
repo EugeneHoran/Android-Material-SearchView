@@ -1,36 +1,25 @@
 package com.eugene.fithealth;
 
 import android.app.Application;
-import android.content.Context;
 
-import com.eugene.fithealth.LogQuickSearchData.LogQuickSearch;
-import com.orm.androrm.DatabaseAdapter;
-import com.orm.androrm.Model;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.eugene.fithealth.db.SearchDatabase;
+import com.eugene.fithealth.db.SearchRepository;
+import com.eugene.fithealth.util.AppExecutors;
 
 public class AppActivity extends Application {
-    private static AppActivity appContext;
+    private AppExecutors appExecutors;
 
     public void onCreate() {
         super.onCreate();
-        appContext = this;
-        initializeDatabase();
+        appExecutors = new AppExecutors();
     }
 
-    public static Context context() {
-        return appContext;
+    public SearchDatabase getDatabase() {
+        return SearchDatabase.getInstance(this);
     }
 
-    private void initializeDatabase() {
-        List<Class<? extends Model>> models = new ArrayList<>(0);
-        models.add(LogQuickSearch.class);
-        String dbName = this.getResources().getString(R.string.database_name);
-        DatabaseAdapter.setDatabaseName(dbName);
-        DatabaseAdapter adapter = new DatabaseAdapter(appContext);
-        adapter.setModels(models);
+    public SearchRepository getRepository() {
+        return SearchRepository.getInstance(appExecutors, getDatabase());
     }
-
 }
 

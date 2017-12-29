@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.eugene.fithealth.search.SearchActivity">
+
+    <data>
+
+        <variable
+            name="text"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/itemHolder"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:contentDescription="@null"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingEnd="72dp"
+            android:paddingLeft="72dp"
+            android:paddingRight="72dp"
+            android:paddingStart="72dp"
+            android:text="@{text}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/imgDelete"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:foreground="@drawable/image_background"
+            android:padding="12dp"
+            android:tint="@android:color/darker_gray"
+            app:srcCompat="@drawable/ic_delete" />
+    </RelativeLayout>
+</layout>

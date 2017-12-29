@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MaterialSearchView">
+        <attr name="menu_position" format="integer" />
+        <attr name="search_hint" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="icon_color" format="color" />
+    </declare-styleable>
+</resources>

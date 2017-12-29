@@ -10,4 +10,6 @@
     <!--Database Name-->
     <string name="database_name">database_log</string>
     <string name="string_filler">Filler</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
