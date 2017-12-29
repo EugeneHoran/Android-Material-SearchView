@@ -47,7 +47,7 @@ public class SearchRepository {
         });
     }
 
-    public MutableLiveData<List<SearchEntity>> getSearchListLive() {
+    public LiveData<List<SearchEntity>> getSearchListLive() {
         return database.getSearchDao().getSearchListLive();
     }
 }

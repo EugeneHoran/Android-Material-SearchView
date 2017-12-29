@@ -1,7 +1,6 @@
 package com.eugene.fithealth.db;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -23,6 +22,6 @@ public abstract class SearchDao {
     public abstract List<SearchEntity> getSearchList();
 
     @Query("SELECT * FROM search_table ORDER BY timestamp DESC LIMIT 5")
-    public abstract MutableLiveData<List<SearchEntity>> getSearchListLive();
+    public abstract LiveData<List<SearchEntity>> getSearchListLive();
 
 }

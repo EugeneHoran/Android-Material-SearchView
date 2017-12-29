@@ -26,7 +26,7 @@ import java.util.UUID;
 public class SearchViewModel extends AndroidViewModel {
     private SearchRepository repository;
     private MutableLiveData<List<Food>> getFoodList;
-    private MutableLiveData<List<SearchEntity>> getSearchListLive;
+    private LiveData<List<SearchEntity>> getSearchListLive;
 
     public SearchViewModel(@NonNull Application application) {
         super(application);

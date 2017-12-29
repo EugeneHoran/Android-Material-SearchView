@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.eugene.fithealth.databinding.RecyclerFatSecretItemBinding;
-import com.eugene.fithealth.db.SearchEntity;
 import com.eugene.fithealth.model.Food;
 
 import java.util.ArrayList;
