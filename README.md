@@ -1,16 +1,6 @@
 # Android-Material-SearchView
 
-**Example of a custom search animation**
+In the process of converting to a library. It is a mess at the moment but will be updating it over time. 
 
-The code is a little messy, not using it any of my applications as of now.  When I add it to Fit Health, I will upload a clean version with tests and check for errors. 
+<img src="https://media.giphy.com/media/26Ff0H71r4BS3kEq4/giphy.gif" width="220" />
 
-It also includes an example of TabLayout from the latest Design Library released by Google. 
-
-**Two main files containing the search implementaion.**
-- [MainActivity.java](/app/src/main/java/com/eugene/fithealth/Activities/MainActivity.java) 
-- [InitiateSearch.java](/app/src/main/java/com/eugene/fithealth/Utilities/InitiateSearch.java) 
-
-It also includes an APK if you would like to download it and test it out. 
-
-
-![thumbs up](/repo/example.gif)
