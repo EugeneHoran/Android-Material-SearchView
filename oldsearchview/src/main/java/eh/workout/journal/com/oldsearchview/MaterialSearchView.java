@@ -1,4 +1,4 @@
-package eh.workout.journal.com.materialsearchview;
+package eh.workout.journal.com.oldsearchview;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -26,7 +26,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import eh.workout.journal.com.materialsearchview.databinding.ViewSearchBinding;
+import eh.workout.journal.com.oldsearchview.databinding.ViewSearchBinding;
 
 public class MaterialSearchView extends CardView implements View.OnClickListener, TextWatcher, TextView.OnEditorActionListener {
     private static final int ANIMATION_DURATION = 250;
@@ -38,7 +38,9 @@ public class MaterialSearchView extends CardView implements View.OnClickListener
     private boolean hideSearch = false;
 
     private ViewSearchBinding binding;
-    private OnQueryTextListener listener;
+    private OnQueryTextListener listenerQuery;
+    private OnVisibilityListener visibilityListener;
+
 
     public MaterialSearchView(@NonNull Context context) {
         super(context);
@@ -172,17 +174,17 @@ public class MaterialSearchView extends CardView implements View.OnClickListener
     @Override
     public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
         binding.imgClear.setVisibility(i2 == 0 ? GONE : VISIBLE);
-        if (listener != null) {
-            listener.onQueryTextChange(String.valueOf(charSequence));
+        if (listenerQuery != null) {
+            listenerQuery.onQueryTextChange(String.valueOf(charSequence));
         }
     }
 
     @Override
     public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-            if (listener != null) {
+            if (listenerQuery != null) {
                 binding.linearItemsHolder.setVisibility(GONE);
-                listener.onQueryTextSubmit(textView.getText().toString().trim());
+                listenerQuery.onQueryTextSubmit(textView.getText().toString().trim());
             }
             return false;
         }
@@ -248,14 +250,24 @@ public class MaterialSearchView extends CardView implements View.OnClickListener
     /**
      * Interface
      */
-    public void addQueryTextListener(OnQueryTextListener listener) {
-        this.listener = listener;
+    public void addQueryTextListener(OnQueryTextListener listenerQuery) {
+        this.listenerQuery = listenerQuery;
     }
 
     public interface OnQueryTextListener {
-        void onQueryTextSubmit(String query);
+        boolean onQueryTextSubmit(String query);
 
-        void onQueryTextChange(String newText);
+        boolean onQueryTextChange(String newText);
+    }
+
+    public void setOnVisibilityListener(OnVisibilityListener visibilityListener) {
+        this.visibilityListener = visibilityListener;
+    }
+
+    public interface OnVisibilityListener {
+        boolean onOpen();
+
+        boolean onClose();
     }
 
     /**

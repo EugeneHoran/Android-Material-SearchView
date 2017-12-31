@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MaterialSearchView">
-        <attr name="menu_position" format="integer" />
+        <attr name="search_animate" format="boolean" />
+        <attr name="search_ime_options" format="integer" />
+        <attr name="search_input_type" format="integer" />
+        <attr name="search_focusable" format="boolean" />
+        <attr name="search_menu_position" format="integer" />
         <attr name="search_hint" format="string" />
-        <attr name="text_color" format="color" />
-        <attr name="icon_color" format="color" />
+        <attr name="search_text_color" format="color" />
+        <attr name="search_icon_color" format="color" />
     </declare-styleable>
 </resources>

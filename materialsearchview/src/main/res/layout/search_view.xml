@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/searchParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true">
+
+    <com.android.materialsearchview.MaterialSearchView
+        android:id="@+id/searchHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:visibility="visible"
+        app:cardElevation="4dp"
+        app:search_animate="true"
+        app:search_hint="Search FatSecret"
+        app:search_menu_position="1" />
+</FrameLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MaterialSearchView</string>
+    <string name="action_search">Search</string>
+</resources>

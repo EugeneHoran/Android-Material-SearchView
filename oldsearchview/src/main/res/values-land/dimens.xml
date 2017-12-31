@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="search_height">36dp</dimen>
+    <dimen name="image_padding">8dp</dimen>
+    <dimen name="search_text_size">16sp</dimen>
+</resources>

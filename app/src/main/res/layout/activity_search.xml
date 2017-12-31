@@ -25,15 +25,15 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
         </android.support.design.widget.AppBarLayout>
 
-        <eh.workout.journal.com.materialsearchview.MaterialSearchView
+        <com.android.materialsearchview.MaterialSearchView
             android:id="@+id/searchHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             android:visibility="invisible"
             app:cardElevation="4dp"
-            app:menu_position="1"
-            app:search_hint="Search FatSecret" />
+            app:search_hint="Search FatSecret"
+            app:search_menu_position="1" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"

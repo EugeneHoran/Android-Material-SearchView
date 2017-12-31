@@ -10,14 +10,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.materialsearchview.MaterialSearchView;
 import com.eugene.fithealth.R;
 import com.eugene.fithealth.databinding.ActivitySearchBinding;
 import com.eugene.fithealth.db.SearchEntity;
 import com.eugene.fithealth.model.Food;
 
 import java.util.List;
-
-import eh.workout.journal.com.materialsearchview.MaterialSearchView;
 
 public class SearchActivity extends AppCompatActivity implements
         MaterialSearchView.OnQueryTextListener,
@@ -55,14 +54,16 @@ public class SearchActivity extends AppCompatActivity implements
 
     // MaterialSearchView listeners
     @Override
-    public void onQueryTextSubmit(String query) {
+    public boolean onQueryTextSubmit(String query) {
         binding.searchHolder.hideRecycler();
         model.searchFood(query, 0);
+        return true;
     }
 
     @Override
-    public void onQueryTextChange(String newText) {
+    public boolean onQueryTextChange(String newText) {
         binding.searchHolder.showRecycler();
+        return true;
     }
 
     // adapter item clicked
